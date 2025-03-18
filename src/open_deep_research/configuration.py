@@ -35,10 +35,14 @@ class Configuration:
     report_structure: str = DEFAULT_REPORT_STRUCTURE # Defaults to the default report structure
     number_of_queries: int = 2 # Number of search queries to generate per iteration
     max_search_depth: int = 2 # Maximum number of reflection + search iterations
-    planner_provider: str = "anthropic"  # Defaults to Anthropic as provider
-    planner_model: str = "claude-3-7-sonnet-latest" # Defaults to claude-3-7-sonnet-latest
-    writer_provider: str = "anthropic" # Defaults to Anthropic as provider
-    writer_model: str = "claude-3-5-sonnet-latest" # Defaults to claude-3-5-sonnet-latest
+    # planner_provider: PlannerProvider = PlannerProvider.ANTHROPIC  # Defaults to Anthropic as provider
+    # planner_model: str = "claude-3-7-sonnet-latest" # Defaults to claude-3-7-sonnet-latest
+    planner_provider: PlannerProvider = PlannerProvider.GOOGLE  # Defaults to Anthropic as provider
+    planner_model: str = "gemini-2.0-flash-001" # Defaults to gemini-1.5-flash-latest
+    # writer_provider: WriterProvider = WriterProvider.ANTHROPIC # Defaults to Anthropic as provider
+    # writer_model: str = "claude-3-5-sonnet-latest" # Defaults to claude-3-5-sonnet-latest
+    writer_provider: WriterProvider = WriterProvider.GOOGLE  # Defaults to Anthropic as provider
+    writer_model: str = "gemini-2.0-flash-001" # Defaults to gemini-1.5-flash-latest
     search_api: SearchAPI = SearchAPI.TAVILY # Default to TAVILY
     search_api_config: Optional[Dict[str, Any]] = None 
 
